@@ -1,36 +1,30 @@
-# Exe files
-BIN := bin/
-# .h files
-INC := inc/
-# .c files
-SRC := src/
-# .o files
-OBJ := obj/
+# Executavel
+BINFOLDER := bin/
+# .hpp
+INCFOLDER := inc/
+# .cpp
+SRCFOLDER := src/
+# .o
+OBJFOLDER := obj/
 
 CC := g++
 
-CFLAGS := -W -Wall -ansi -pedantic
+CFLAGS := -W -Wall -ansi -pedantic -std=c++11
 
-# Source files.
-# Add all files to be used in onde project here. 
+# Qualquer coisa de extensão .cpp
+SRCFILES := $(wildcard src/*.cpp)
 
-# Concatenates all files to the project.
-PROG := $(wildcard src/*.c)
-
-# Compile project. 
-all: create_folders $(PROG:src/%.c=obj/%.o)
+# SRCFILES transforma o .cpp em .o para a pasta obj
+all: create_folders $(SRCFILES:src/%.cpp=obj/%.o)
 	$(CC) $(CFLAGS) obj/*.o -o bin/prog
 
-create_folders:
-	@mkdir -p $(OBJ) $(BIN)
-
-# Generate .o files.
-obj/%.o: src/%.c
+# Compila o programa classe por classe.
+obj/%.o: src/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I./inc
-	$(CC) $(CFLAGS) -c ../utils/utils.c -o obj/utils.o -I../utils
 
-# Run the executable files.
-run: bin/prog
+create_folders:
+	@mkdir -p $(OBJFOLDER) $(BINFOLDER)
+run:
 	bin/prog
 
 .PHONY: clean
