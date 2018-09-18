@@ -2,4 +2,4 @@
 *.out
 obj/
 bin/
-
+*.vscode
