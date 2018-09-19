@@ -4,6 +4,18 @@ Acesse a descrição completa deste exercício na [wiki](https://gitlab.com/oofg
 
 ## Como usar o projeto
 
+* Compile o projeto com o comando:
+
+```sh
+make
+```
+
+* Execute o projeto com o comando:
+
+```sh
+make run
+```
+
 ## Funcionalidades do projeto
 
 ## Bugs e problemas

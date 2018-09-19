@@ -11,10 +11,11 @@ class Candidatos {
 		string NM_UE;
 		string DS_CARGO;
 		string NR_CANDIDATO;
+		string NM_CANDIDATO;
         string NM_URNA_CANDIDATO;
-        string NM_PARTIDO;
-        string NR_CPF_CANDIDATO;
-        string NM_EMAIL;
+		string NR_PARTIDO;        
+		string NM_PARTIDO;
+        string DS_PARTIDO;
 		
 	public:
 		Candidatos();

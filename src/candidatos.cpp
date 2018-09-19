@@ -3,19 +3,20 @@
 Candidatos::Candidatos(){
     
     votos = 0;
+    
     NM_UE = "";
     DS_CARGO = "";
-    NR_CANDIDATO = "00000";
+    NR_CANDIDATO = "00";
+    NM_CANDIDATO = "";
     NM_URNA_CANDIDATO = "";
+    NR_PARTIDO = "0";
     NM_PARTIDO = "";
-    NR_CPF_CANDIDATO = "00000000000";
-    NM_EMAIL = "";
+    DS_PARTIDO = "";
 
 }
-Candidatos::~Candidatos(){}
-
-votos = 0;
-
+Candidatos::~Candidatos() {
+    votos = 0;
+}
 string Candidatos::get_NM_UE(){
     return NM_UE;
 }
@@ -34,11 +35,23 @@ string Candidatos::get_NR_CANDIDATO(){
 void Candidatos::set_NR_CANDIDATO(string NR_CANDIDATO){
     this->NR_CANDIDATO = NR_CANDIDATO;
 }
+string Candidatos::get_NM_CANDIDATO(){
+    return NM_CANDIDATO;
+}
+void Candidatos::set_NR_CANDIDATO(string NM_CANDIDATO){
+    this->NM_CANDIDATO = NM_CANDIDATO;
+}
 string Candidatos::get_NM_URNA_CANDIDATO(){
     return NM_URNA_CANDIDATO;
 }
 void Candidatos::set_NM_URNA_CANDIDATO(string NM_URNA_CANDIDATO){
     this->NM_URNA_CANDIDATO = NM_URNA_CANDIDATO;
+}
+string Candidatos::get_NR_PARTIDO(){
+    return NR_PARTIDO;
+}
+void Candidatos::set_NR_PARTIDO(string NR_PARTIDO){
+    this->NR_PARTIDO = NR_PARTIDO;
 }
 string Candidatos::get_NM_PARTIDO(){
     return NM_PARTIDO;
@@ -46,17 +59,13 @@ string Candidatos::get_NM_PARTIDO(){
 void Candidatos::set_NM_PARTIDO(string NM_PARTIDO){
     this->NM_PARTIDO = NM_PARTIDO;
 }
-string Candidatos::get_NR_CPF_CANDIDATO(){
-    return NR_CPF_CANDIDATO;
+string Candidatos::get_DS_PARTIDO(){
+    return DS_PARTIDO;
 }
-void Candidatos::set_NR_CPF_CANDIDATO(string NR_CPF_CANDIDATO){
-    this->NR_CPF_CANDIDATO = NR_CPF_CANDIDATO;
+void Candidatos::set_DS_PARTIDO(string DS_PARTIDO){
+    this->DS_PARTIDO = DS_PARTIDO;
 }
-string Candidatos::get_NM_EMAIL(){
-    return NM_EMAIL;
-}
-void Candidatos::set_NM_EMAIL(string NM_EMAIL){
-    this->NM_EMAIL = NM_EMAIL;
+
 void Candidatos::adicionar_votos()
 {
     votos++;    
