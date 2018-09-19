@@ -6,7 +6,7 @@ Candidatos::Candidatos(){
     
     NM_UE = "";
     DS_CARGO = "";
-    NR_CANDIDATO = "00";
+    NR_CANDIDATO = "00000";
     NM_CANDIDATO = "";
     NM_URNA_CANDIDATO = "";
     NR_PARTIDO = "0";

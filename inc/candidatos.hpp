@@ -26,14 +26,16 @@ class Candidatos {
 		void set_DS_CARGO(string DS_CARGO);
         string get_NR_CANDIDATO();
 		void set_NR_CANDIDATO(string NR_CANDIDATO);
+		string get_NM_CANDIDATO();
+		void set_NM_CANDIDATO(string NM_CANDIDATO);
         string get_NM_URNA_CANDIDATO();
 		void set_NM_URNA_CANDIDATO(string NM_URNA_CANDIDATO);
+		string get_NR_PARTIDO();
+		void set_NR_PARTIDO(string NR_PARTIDO);
         string get_NM_PARTIDO();
 		void set_NM_PARTIDO(string NM_PARTIDO);
-        string get_NR_CPF_CANDIDATO();
-		void set_NR_CPF_CANDIDATO(string NR_CPF_CANDIDATO); 
-        string get_NM_EMAIL();
-		void set_NM_EMAIL(string NM_EMAIL);
+        string get_DS_PARTIDO();
+		void set_DS_PARTIDO(string DS_PARTIDO);
 		
 		void adicionar_votos();
 		int get_votos;
