@@ -1,17 +1,12 @@
-#include "eleitor.hpp"
+#include "../inc/eleitor.hpp"
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-Eleitor::Eleitor() {   
-    
-    set_nome("");  
-    set_nascimento("00/00/0000");
-    set_titulo_eleitor("0000 0000 0000");
-}
+Eleitor::Eleitor() {}
 
-Eleitor::~Eleitor
+Eleitor::~Eleitor() {}
 
 string Eleitor::get_nome(){
     return nome;
@@ -30,4 +25,41 @@ long int Eleitor::get_titulo_eleitor(){
 }
 void Eleitor::set_titulo_eleitor(long int titulo_eleitor){
     this->titulo_eleitor = titulo_eleitor;
+}
+
+string Eleitor::get_presidente(){
+    return presidente;
+}
+void Eleitor::set_presidente(string presidente){
+    this->presidente = presidente;
+}
+string Eleitor::get_governador(){
+    return governador;
+}
+void Eleitor::set_governador(string governador){
+    this->governador = governador;
+}
+string Eleitor::get_senador_1(){
+    return senador_1;
+}
+void Eleitor::set_senador_1(string senador_1){
+    this->senador_1 = senador_1;
+}
+string Eleitor::get_senador_2(){
+    return senador_2;
+}
+void Eleitor::set_senador_2(string senador_2){
+    this->senador_2 = senador_2;
+}
+string Eleitor::get_federal(){
+    return federal;
+}
+void Eleitor::set_federal(string federal){
+    this->federal = federal;
+}
+string Eleitor::get_distrital(){
+    return distrital;
+}
+void Eleitor::set_distrital(string distrital){
+    this->distrital = distrital;
 }

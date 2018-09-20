@@ -1,22 +1,11 @@
-#include "candidatos.hpp"
+#include "../inc/candidatos.hpp"
+#include <cstring>
+#include <iostream>
 
-Candidatos::Candidatos(){
-    
-    votos = 0;
-    
-    NM_UE = "";
-    DS_CARGO = "";
-    NR_CANDIDATO = "00000";
-    NM_CANDIDATO = "";
-    NM_URNA_CANDIDATO = "";
-    NR_PARTIDO = "0";
-    NM_PARTIDO = "";
-    DS_PARTIDO = "";
+Candidatos::Candidatos(){}
+Candidatos::~Candidatos(){}
 
-}
-Candidatos::~Candidatos() {
-    votos = 0;
-}
+
 string Candidatos::get_NM_UE(){
     return NM_UE;
 }
@@ -24,7 +13,7 @@ void Candidatos::set_NM_UE(string NM_UE){
     this->NM_UE = NM_UE;
 }
 string Candidatos::get_DS_CARGO(){
-    return NM_UE;
+    return DS_CARGO;
 }
 void Candidatos::set_DS_CARGO(string DS_CARGO){
     this->DS_CARGO = DS_CARGO;
@@ -38,7 +27,7 @@ void Candidatos::set_NR_CANDIDATO(string NR_CANDIDATO){
 string Candidatos::get_NM_CANDIDATO(){
     return NM_CANDIDATO;
 }
-void Candidatos::set_NR_CANDIDATO(string NM_CANDIDATO){
+void Candidatos::set_NM_CANDIDATO(string NM_CANDIDATO){
     this->NM_CANDIDATO = NM_CANDIDATO;
 }
 string Candidatos::get_NM_URNA_CANDIDATO(){
@@ -66,11 +55,3 @@ void Candidatos::set_DS_PARTIDO(string DS_PARTIDO){
     this->DS_PARTIDO = DS_PARTIDO;
 }
 
-void Candidatos::adicionar_votos()
-{
-    votos++;    
-}
-int Candidatos::get_votos()
-{
-    return votos;    
-}

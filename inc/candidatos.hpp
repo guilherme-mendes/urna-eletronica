@@ -6,8 +6,13 @@ using namespace std;
 
 class Candidatos {
 
-	private:
-		int votos;		
+	private:	
+		
+		
+	public:
+		Candidatos();
+		~Candidatos();
+		
 		string NM_UE;
 		string DS_CARGO;
 		string NR_CANDIDATO;
@@ -16,10 +21,9 @@ class Candidatos {
 		string NR_PARTIDO;        
 		string NM_PARTIDO;
         string DS_PARTIDO;
-		
-	public:
-		Candidatos();
-		~Candidatos();
+		int max_eleitores;
+
+
 		string get_NM_UE();
 		void set_NM_UE(string NM_UE);
         string get_DS_CARGO();
@@ -37,9 +41,7 @@ class Candidatos {
         string get_DS_PARTIDO();
 		void set_DS_PARTIDO(string DS_PARTIDO);
 		
-		void adicionar_votos();
-		int get_votos;
-		
+		void set_max_eleitores(int max_eleitores);
 };
 
 #endif
