@@ -8,11 +8,12 @@ Eleitor::Eleitor() {
     nome = "VAZIO";
     nascimento = "";
     titulo_eleitor = 0;
-    VotoDD = "Ninguem";
-    VotoDF = "Ninguem";
-    VotoGov = "Ninguem";
-    VotoSen = "Ninguem";
-    VotoPres = "Ninguem";
+    VotoDD = "NULL";
+    VotoDF = "NULL";
+    VotoGov = "NULL";
+    VotoSen = "NULL";
+    VotoSen2 = "NULL";
+    VotoPres = "NULL";
 
 }
 

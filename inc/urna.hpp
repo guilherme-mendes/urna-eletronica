@@ -16,10 +16,12 @@ class Urna {
         void VotoDeputadoFederal();
         void VotoDeputadoDistrital();
         void VotoSenador();
+        void VotoSenador2();
         void VotoGovernador();
         void VotoPresidente();
        
         void lerArquivo();
+        void lerArquivo2();
         int ReturnEleitores();
         void mesario();
         void cadastroEleitor();

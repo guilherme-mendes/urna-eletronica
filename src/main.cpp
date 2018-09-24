@@ -14,7 +14,9 @@ int main(){
 	int i;
 	
 	urna.lerArquivo();
+	urna.lerArquivo2();
 	urna.mesario();
+	
 
 	while(i < urna.ReturnEleitores()){
 		
@@ -22,6 +24,9 @@ int main(){
 		urna.VotoDeputadoFederal();
 		urna.VotoDeputadoDistrital();
 		urna.VotoSenador();
+		urna.VotoSenador2();
+		urna.VotoGovernador();
+		urna.VotoPresidente();
 
 		i++;
 	}
