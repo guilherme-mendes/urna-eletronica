@@ -1,10 +1,22 @@
 #include "../inc/candidatos.hpp"
+#include "../inc/eleitor.hpp"
 #include <cstring>
 #include <iostream>
 
-Candidatos::Candidatos(){}
-Candidatos::~Candidatos(){}
+Candidatos::Candidatos(){
+    
+    cand_analise = 0;
+    num_votos = 0;
+    NM_UE = "";
+    DS_CARGO = "VAZIO";
+    NM_CANDIDATO = "";
+    NR_CANDIDATO = "";
+    NM_URNA_CANDIDATO = "";
+    NR_PARTIDO = "";
+    DS_PARTIDO = "";
 
+}
+Candidatos::~Candidatos(){}
 
 string Candidatos::get_NM_UE(){
     return NM_UE;

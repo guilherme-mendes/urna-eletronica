@@ -4,7 +4,17 @@
 
 using namespace std;
 
-Eleitor::Eleitor() {}
+Eleitor::Eleitor() {
+    nome = "VAZIO";
+    nascimento = "";
+    titulo_eleitor = 0;
+    VotoDD = "Ninguem";
+    VotoDF = "Ninguem";
+    VotoGov = "Ninguem";
+    VotoSen = "Ninguem";
+    VotoPres = "Ninguem";
+
+}
 
 Eleitor::~Eleitor() {}
 
@@ -27,39 +37,3 @@ void Eleitor::set_titulo_eleitor(long int titulo_eleitor){
     this->titulo_eleitor = titulo_eleitor;
 }
 
-string Eleitor::get_presidente(){
-    return presidente;
-}
-void Eleitor::set_presidente(string presidente){
-    this->presidente = presidente;
-}
-string Eleitor::get_governador(){
-    return governador;
-}
-void Eleitor::set_governador(string governador){
-    this->governador = governador;
-}
-string Eleitor::get_senador_1(){
-    return senador_1;
-}
-void Eleitor::set_senador_1(string senador_1){
-    this->senador_1 = senador_1;
-}
-string Eleitor::get_senador_2(){
-    return senador_2;
-}
-void Eleitor::set_senador_2(string senador_2){
-    this->senador_2 = senador_2;
-}
-string Eleitor::get_federal(){
-    return federal;
-}
-void Eleitor::set_federal(string federal){
-    this->federal = federal;
-}
-string Eleitor::get_distrital(){
-    return distrital;
-}
-void Eleitor::set_distrital(string distrital){
-    this->distrital = distrital;
-}
