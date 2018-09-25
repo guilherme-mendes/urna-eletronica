@@ -1,19 +1,24 @@
 #include "../inc/eleitor.hpp"
 #include <string>
-#include <iostream>
 
 using namespace std;
 
 Eleitor::Eleitor() {
     nome = "VAZIO";
-    nascimento = "";
+    cpf = "VAZIO";
     titulo_eleitor = 0;
-    VotoDD = "NULL";
-    VotoDF = "NULL";
-    VotoGov = "NULL";
-    VotoSen = "NULL";
-    VotoSen2 = "NULL";
-    VotoPres = "NULL";
+    VotoDD = "BRANCO";
+    VotoDF = "BRANCO";
+    VotoGov = "BRANCO";
+    VotoGovVice = "BRANCO";
+    VotoSen = "BRANCO";
+    VotoSup1 = "BRANCO";
+    VotoSup2 = "BRANCO";
+    VotoSen2 = "BRANCO";
+    VotoSup3 = "BRANCO";
+    VotoSup4 = "BRANCO";
+    VotoPres = "BRANCO";
+    VotoPresVice = "BRANCO";
 
 }
 
@@ -25,11 +30,11 @@ string Eleitor::get_nome(){
 void Eleitor::set_nome(string nome){
     this->nome = nome;
 }
-string Eleitor::get_nascimento(){
-    return nascimento;
+string Eleitor::get_cpf(){
+    return cpf;
 }
-void Eleitor::set_nascimento(string nascimento){
-    this->nascimento = nascimento;
+void Eleitor::set_cpf(string cpf){
+    this->cpf = cpf;
 }
 long int Eleitor::get_titulo_eleitor(){
     return titulo_eleitor;

@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <fstream>
 #include "../inc/candidatos.hpp"
 #include "../inc/eleitor.hpp"
 #include "../inc/urna.hpp"
@@ -32,7 +30,13 @@ int main(){
 	}
 		
 	urna.relatorio();
-	urna.Ganhador();
+	urna.GanhadorDepFederal();
+	urna.GanhadorDepDistrital();
+	urna.GanhadorSenador1();
+	urna.GanhadorSenador2();
+	urna.GanhadorGovernador();
+	urna.GanhadorPresidente();
+
 
 	return 0;
 }

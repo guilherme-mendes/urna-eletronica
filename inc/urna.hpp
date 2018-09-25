@@ -1,7 +1,6 @@
 #ifndef URNA_HPP
 #define URNA_HPP
 #include <string>
-#include <iostream>
 
 
 using namespace std;
@@ -27,10 +26,15 @@ class Urna {
         void cadastroEleitor();
         void confirmarVoto();
         void relatorio();
+        void relatorio2();
         void clearBuff();
-        void Ganhador();
+        void GanhadorDepFederal();
+        void GanhadorDepDistrital();
+        void GanhadorSenador1();
+        void GanhadorSenador2();
+        void GanhadorGovernador();
+        void GanhadorPresidente();
         
-
 };
 
 #endif

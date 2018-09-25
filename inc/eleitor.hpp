@@ -1,6 +1,5 @@
 #ifndef ELEITOR_HPP
 #define ELEITOR_HPP
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -14,17 +13,18 @@ class Eleitor {
         ~Eleitor();
 
         string nome;
-        string nascimento;
+        string cpf;
         long int titulo_eleitor;
-        string VotoDF, VotoDD, VotoSen, VotoSen2;
-        string VotoSup1, VotoSup2, VotoSup3, VotoSup4, VotoGov, VotoGovVice,VotoPres, VotoPresVice;
-        int num_eleitores;
-        int counter_eleitor;
+        string VotoDF, VotoDD, VotoSen, VotoSen2; 
+        string VotoSup1, VotoSup2, VotoSup3, VotoSup4; // Suplentes dos Senadores 
+        string VotoGov, VotoGovVice, VotoPres, VotoPresVice;
+        int num_eleitores = 0;
+        int counter_eleitor = 0;
 
         string get_nome();
 	    void set_nome(string nome); 
-        string get_nascimento();
-        void set_nascimento(string nascimento);
+        string get_cpf();
+        void set_cpf(string cpf);
         long int get_titulo_eleitor();
         void set_titulo_eleitor(long int titulo_eleitor);
     

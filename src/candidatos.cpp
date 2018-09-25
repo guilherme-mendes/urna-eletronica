@@ -1,7 +1,7 @@
 #include "../inc/candidatos.hpp"
 #include "../inc/eleitor.hpp"
-#include <cstring>
 #include <iostream>
+#include <string>
 
 Candidatos::Candidatos(){
     

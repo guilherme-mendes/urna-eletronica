@@ -1,11 +1,9 @@
 #include "../inc/urna.hpp"
 #include "../inc/candidatos.hpp"
 #include "../inc/eleitor.hpp"
-#include <iostream>
-#include <string>
-#include <fstream>
 #include <stdlib.h>
-#include <sstream>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -13,8 +11,37 @@ Urna::Urna() {}
 Urna::~Urna() {}
 
 Eleitor eleitor[1238];
-Candidatos cand_DF[1238];
-Candidatos cand_BR[27];
+Candidatos cand_DF[1265];
+
+void Urna::mesario(){
+
+    cout << "DIGITE O Nº DE ELEITORES QUE VOTARÃO NESTA URNA: " << endl;
+    cin >> eleitor[0].num_eleitores;
+
+}
+
+void Urna::cadastroEleitor(){
+
+    system("clear");
+    cout << "----------------CADASTRO DO ELEITOR-----------------" << endl << endl;
+
+    cout << "DIGITE SEU NOME COMPLETO: " << endl;
+    cin.ignore();
+    getline(cin, eleitor[eleitor[0].counter_eleitor].nome);
+    cout << endl;
+
+    cout << "DIGITE O Nº DO SEU TITULO DE ELEITOR: " << endl;
+    cin >> eleitor[eleitor[0].counter_eleitor].titulo_eleitor;
+    cout << endl;
+    
+    cout << "DIGITE SEU CPF: " << endl;
+    cin.ignore();
+    getline(cin, eleitor[eleitor[0].counter_eleitor].cpf);
+
+    eleitor[0].counter_eleitor++;
+    cout << endl;
+    system("clear");
+}
 
 void Urna::lerArquivo(){
 
@@ -59,23 +86,22 @@ void Urna::lerArquivo2(){
             cout << "Não foi possível abrir o arquivo!" << endl;
 		}
 	
-	for (i=0; i<= 26; i++){
+	for (i=1238; i<= 1265; i++){
 		
-		getline(arquivo, cand_BR[i].NM_UE, ',');
-		getline(arquivo, cand_BR[i].DS_CARGO, ',');
-		getline(arquivo, cand_BR[i].NR_CANDIDATO, ',');
-		getline(arquivo, cand_BR[i].NM_CANDIDATO, ',');
-		getline(arquivo, cand_BR[i].NM_URNA_CANDIDATO, ',');
-		getline(arquivo, cand_BR[i].NR_PARTIDO, ',');
-		getline(arquivo, cand_BR[i].NM_PARTIDO, ',');
-		getline(arquivo, cand_BR[i].DS_PARTIDO, '\n');
+		getline(arquivo, cand_DF[i].NM_UE, ',');
+		getline(arquivo, cand_DF[i].DS_CARGO, ',');
+		getline(arquivo, cand_DF[i].NR_CANDIDATO, ',');
+		getline(arquivo, cand_DF[i].NM_CANDIDATO, ',');
+		getline(arquivo, cand_DF[i].NM_URNA_CANDIDATO, ',');
+		getline(arquivo, cand_DF[i].NR_PARTIDO, ',');
+		getline(arquivo, cand_DF[i].NM_PARTIDO, ',');
+		getline(arquivo, cand_DF[i].DS_PARTIDO, '\n');
 
 	}
  
 	arquivo.close();
 
 }
-
 
 void Urna::clearBuff(){
 
@@ -88,35 +114,6 @@ void Urna::clearBuff(){
 
 }
 
-void Urna::mesario(){
-
-    cout << "DIGITE O Nº DE ELEITORES QUE VOTARÃO NESTA URNA: " << endl;
-    cin >> eleitor[0].num_eleitores;
-
-}
-
-void Urna::cadastroEleitor(){
-
-    system("clear");
-    cout << "----------------CADASTRO DO ELEITOR-----------------" << endl << endl;
-
-    cout << "DIGITE SEU NOME COMPLETO: " << endl;
-    cin.ignore();
-    getline(cin, eleitor[eleitor[0].counter_eleitor].nome);
-    cout << endl;
-
-    cout << "DIGITE O Nº DO SEU TITULO DE ELEITOR: " << endl;
-    cin >> eleitor[eleitor[0].counter_eleitor].titulo_eleitor;
-    cout << endl;
-    
-    cout << "DIGITE SUA DATA NASCIMENTO: [EX.: 26/06/1999]" << endl;
-    cin.ignore();
-    getline(cin, eleitor[eleitor[0].counter_eleitor].nascimento);
-
-    eleitor[0].counter_eleitor++;
-    cout << endl;
-}
-
 int Urna::ReturnEleitores(){
     return eleitor[0].num_eleitores;
 }
@@ -125,9 +122,8 @@ void Urna::confirmarVoto(){
     char opcao;
 
         cout << "[1] - CONFIRMAR" << endl;
-        cout << "[2] - CORRIGIR" << endl;
-        cout << "[3] - BRANCO" << endl;
-        cout << "[4] - CANCELAR" << endl;
+        cout << "[2] - CANCELAR PASSO" << endl;
+        cout << "[ENTER] - BRANCO" << endl;
         cout << "----------------------------------------------------" << endl;
         cout << "DIGITE A OPÇÃO DESEJADA: " << endl;
 
@@ -149,12 +145,12 @@ void Urna::confirmarVoto(){
             else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "DEPUTADO DISTRITAL"){
                 eleitor[eleitor[0].counter_eleitor-1].VotoDD = cand_DF[cand_DF[0].cand_analise].NM_CANDIDATO; 
             }
-            else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR"){
+            else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" && cand_DF[3].cand_analise == 1){
                 eleitor[eleitor[0].counter_eleitor-1].VotoSen = cand_DF[cand_DF[0].cand_analise].NM_CANDIDATO;
                 eleitor[eleitor[0].counter_eleitor-1].VotoSup1 = cand_DF[cand_DF[1].cand_analise].NM_CANDIDATO;
                 eleitor[eleitor[0].counter_eleitor-1].VotoSup2 = cand_DF[cand_DF[2].cand_analise].NM_CANDIDATO;
             }
-            else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR"){
+            else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" && cand_DF[3].cand_analise == 2){
                 eleitor[eleitor[0].counter_eleitor-1].VotoSen2 = cand_DF[cand_DF[0].cand_analise].NM_CANDIDATO;
                 eleitor[eleitor[0].counter_eleitor-1].VotoSup3 = cand_DF[cand_DF[1].cand_analise].NM_CANDIDATO;
                 eleitor[eleitor[0].counter_eleitor-1].VotoSup4 = cand_DF[cand_DF[2].cand_analise].NM_CANDIDATO;
@@ -163,10 +159,12 @@ void Urna::confirmarVoto(){
 				eleitor[eleitor[0].counter_eleitor-1].VotoGov = cand_DF[cand_DF[0].cand_analise].NM_CANDIDATO;
 				eleitor[eleitor[0].counter_eleitor-1].VotoGovVice = cand_DF[cand_DF[1].cand_analise].NM_CANDIDATO;				
             }
-            else if(cand_BR[cand_BR[0].cand_analise].DS_CARGO == "PRESIDENTE"){
-				eleitor[eleitor[0].counter_eleitor-1].VotoPres = cand_BR[cand_BR[0].cand_analise].NM_CANDIDATO;
-				eleitor[eleitor[0].counter_eleitor-1].VotoPresVice = cand_BR[cand_BR[1].cand_analise].NM_CANDIDATO;
+            else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRESIDENTE"){
+				eleitor[eleitor[0].counter_eleitor-1].VotoPres = cand_DF[cand_DF[0].cand_analise].NM_CANDIDATO;
+				eleitor[eleitor[0].counter_eleitor-1].VotoPresVice = cand_DF[cand_DF[1].cand_analise].NM_CANDIDATO;
             }
+        }
+
             else if(opcao == '2'){
                 cout << "PASSO CANCELADO !" << endl;
                     
@@ -178,25 +176,24 @@ void Urna::confirmarVoto(){
                         VotoDeputadoDistrital();							
                     }
         
-                    else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRIMEIRO SUPLENTE"  || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SEGUNDO SUPLENTE" ){
+                    else if((cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRIMEIRO SUPLENTE"  || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SEGUNDO SUPLENTE" ) && cand_DF[3].cand_analise == 1){
                         VotoSenador();
                     }
-                    else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRIMEIRO SUPLENTE"  || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SEGUNDO SUPLENTE" ){
+                    else if((cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SENADOR" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRIMEIRO SUPLENTE"  || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "SEGUNDO SUPLENTE" ) && cand_DF[3].cand_analise == 2){
                         VotoSenador2();
                     }
                     else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "GOVERNADOR" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "VICE-GOVERNADOR"){
                         VotoGovernador();
                     }
-                    else if(cand_BR[cand_BR[0].cand_analise].DS_CARGO == "PRESIDENTE" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "VICE-PRESIDENTE"){
+                    else if(cand_DF[cand_DF[0].cand_analise].DS_CARGO == "PRESIDENTE" || cand_DF[cand_DF[0].cand_analise].DS_CARGO == "VICE-PRESIDENTE"){
                         VotoPresidente();
                     }
 
-                }
             }
+            
 }      
 
 void Urna::VotoDeputadoFederal(){
-    system("clear");
     int aux = 0;
     string num_federal;
 
@@ -240,9 +237,8 @@ void Urna::VotoDeputadoFederal(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-
-    }while(aux == 0);
-
+    }
+        while(aux == 0);
 }
 
 void Urna::VotoDeputadoDistrital(){
@@ -290,8 +286,7 @@ void Urna::VotoDeputadoDistrital(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-    }
-    
+    }    
         while(aux == 0);
 }
 
@@ -329,6 +324,7 @@ void Urna::VotoSenador(){
 			cout << "----------------------------------------------------" << endl;
 
             cand_DF[0].cand_analise = i;
+            cand_DF[3].cand_analise = 1;
 
             }
 
@@ -382,9 +378,8 @@ void Urna::VotoSenador(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-    }
-    
-    while(aux == 0);
+    }  
+        while(aux == 0);
 }
 
 void Urna::VotoSenador2(){
@@ -420,7 +415,8 @@ void Urna::VotoSenador2(){
 			cout << "Nome do Partido: " << cand_DF[i].DS_PARTIDO << endl;
 			cout << "----------------------------------------------------" << endl;
 
-            cand_DF[i].cand_analise = i;
+            cand_DF[0].cand_analise = i;
+            cand_DF[3].cand_analise = 2;
 
             }
 
@@ -441,7 +437,7 @@ void Urna::VotoSenador2(){
 			cout << "Nome do Partido: " << cand_DF[i].DS_PARTIDO << endl;
 			cout << "----------------------------------------------------" << endl;
 
-            cand_DF[i].cand_analise = i;
+            cand_DF[1].cand_analise = i;
 
             }
 
@@ -462,7 +458,7 @@ void Urna::VotoSenador2(){
 			cout << "Nome do Partido: " << cand_DF[i].DS_PARTIDO << endl;
 			cout << "----------------------------------------------------" << endl;
 
-            cand_DF[i].cand_analise = i;
+            cand_DF[2].cand_analise = i;
 
             }
         }   
@@ -474,9 +470,8 @@ void Urna::VotoSenador2(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-    }
-    
-    while(aux == 0);
+    } 
+        while(aux == 0);
 }
 void Urna::VotoGovernador(){
     int aux = 0;
@@ -544,9 +539,8 @@ void Urna::VotoGovernador(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-    }
-    
-    while(aux == 0);
+    } 
+        while(aux == 0);
 }
 
 void Urna::VotoPresidente(){
@@ -566,44 +560,44 @@ void Urna::VotoPresidente(){
             }
         }while(num_presidente.size()!=2);
         
-        for(i = 0; i <= 26; i++){
+        for(i=1238; i<= 1265; i++){
             
-            if(cand_BR[i].NR_CANDIDATO == num_presidente && cand_BR[i].DS_CARGO == "PRESIDENTE"){
+            if(cand_DF[i].NR_CANDIDATO == num_presidente && cand_DF[i].DS_CARGO == "PRESIDENTE"){
                 aux = 1;
 
 			cout << "--------------INFORMAÇÕES DO CANDIDATO--------------" << endl << endl;
-			cout << "Nome Completo: " << cand_BR[i].NM_CANDIDATO << endl;
-			cout << "Apelido: " << cand_BR[i].NM_URNA_CANDIDATO << endl;
-			cout << "Cargo: " << cand_BR[i].DS_CARGO << endl;
-			cout << "Região: " << cand_BR[i].NM_UE << endl;
-			cout << "Nº do Candidato: " << cand_BR[i].NR_CANDIDATO << endl;
-			cout << "Nº do Partido: " << cand_BR[i].NR_PARTIDO << endl;
-			cout << "Sigla do Partido: " << cand_BR[i].NM_PARTIDO << endl;
-			cout << "Nome do Partido: " << cand_BR[i].DS_PARTIDO << endl;
+			cout << "Nome Completo: " << cand_DF[i].NM_CANDIDATO << endl;
+			cout << "Apelido: " << cand_DF[i].NM_URNA_CANDIDATO << endl;
+			cout << "Cargo: " << cand_DF[i].DS_CARGO << endl;
+			cout << "Região: " << cand_DF[i].NM_UE << endl;
+			cout << "Nº do Candidato: " << cand_DF[i].NR_CANDIDATO << endl;
+			cout << "Nº do Partido: " << cand_DF[i].NR_PARTIDO << endl;
+			cout << "Sigla do Partido: " << cand_DF[i].NM_PARTIDO << endl;
+			cout << "Nome do Partido: " << cand_DF[i].DS_PARTIDO << endl;
 			cout << "----------------------------------------------------" << endl;
 
-            cand_BR[0].cand_analise = i;
+            cand_DF[0].cand_analise = i;
 
             }
 
         }
 
-        for(i = 0; i <= 26; i++){
+        for(i=1238; i<= 1265; i++){
             
-            if(cand_BR[i].NR_CANDIDATO == num_presidente && cand_BR[i].DS_CARGO == "VICE-PRESIDENTE"){
+            if(cand_DF[i].NR_CANDIDATO == num_presidente && cand_DF[i].DS_CARGO == "VICE-PRESIDENTE"){
                 aux = 1;
 
-			cout << "Nome Completo: " << cand_BR[i].NM_CANDIDATO << endl;
-			cout << "Apelido: " << cand_BR[i].NM_URNA_CANDIDATO << endl;
-			cout << "Cargo: " << cand_BR[i].DS_CARGO << endl;
-			cout << "Região: " << cand_BR[i].NM_UE << endl;
-			cout << "Nº do Candidato: " << cand_BR[i].NR_CANDIDATO << endl;
-			cout << "Nº do Partido: " << cand_BR[i].NR_PARTIDO << endl;
-			cout << "Sigla do Partido: " << cand_BR[i].NM_PARTIDO << endl;
-			cout << "Nome do Partido: " << cand_BR[i].DS_PARTIDO << endl;
+			cout << "Nome Completo: " << cand_DF[i].NM_CANDIDATO << endl;
+			cout << "Apelido: " << cand_DF[i].NM_URNA_CANDIDATO << endl;
+			cout << "Cargo: " << cand_DF[i].DS_CARGO << endl;
+			cout << "Região: " << cand_DF[i].NM_UE << endl;
+			cout << "Nº do Candidato: " << cand_DF[i].NR_CANDIDATO << endl;
+			cout << "Nº do Partido: " << cand_DF[i].NR_PARTIDO << endl;
+			cout << "Sigla do Partido: " << cand_DF[i].NM_PARTIDO << endl;
+			cout << "Nome do Partido: " << cand_DF[i].DS_PARTIDO << endl;
 			cout << "----------------------------------------------------" << endl;
 
-            cand_BR[1].cand_analise = i;
+            cand_DF[1].cand_analise = i;
 
             }
         }   
@@ -615,9 +609,8 @@ void Urna::VotoPresidente(){
         else if(aux == 0){
             cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
         }
-    }
-    
-    while(aux == 0);
+    }    
+        while(aux == 0);
 }
 
 void Urna::relatorio(){
@@ -626,16 +619,16 @@ void Urna::relatorio(){
         cout << "-----------------RELATÓRIO DE VOTOS-----------------" << endl << endl;
         cout << "NOME: " << eleitor[i].nome << endl;
 		cout << "TÍTULO DE ELEITOR: " << eleitor[i].titulo_eleitor << endl;
-        cout << "DATA DE NASCIMENTO: " << eleitor[i].nascimento << endl << endl;
+        cout << "CPF: " << eleitor[i].cpf << endl << endl;
 
-		cout << "DEPUTADO FEDERAL: " << eleitor[i].VotoDF << endl;
+		cout << "DEPUTADO FEDERAL: " << eleitor[i].VotoDF << endl << endl;
 		cout << "DEPUTADO DISTRITAL: " << eleitor[i].VotoDD << endl << endl;
 
 		cout << "SENADOR - 1ª VAGA: " << eleitor[i].VotoSen << endl;
         cout << "- 1º SUPLENTE: " << eleitor[i].VotoSup1 << endl;
         cout << "- 2º SUPLENTE: " << eleitor[i].VotoSup2 << endl << endl;
 
-        cout << "SENADOR - 2ª VAGA: " << eleitor[3].VotoSen2 << endl;
+        cout << "SENADOR - 2ª VAGA: " << eleitor[i].VotoSen2 << endl;
         cout << "- 1º SUPLENTE: " << eleitor[i].VotoSup3 << endl;
         cout << "- 2º SUPLENTE: " << eleitor[i].VotoSup4 << endl << endl;
 
@@ -647,12 +640,11 @@ void Urna::relatorio(){
 	}
 }
 
-void Urna::Ganhador(){
+void Urna::GanhadorDepFederal(){
 
 int i;
-
 int maior = 0;
-string GanhadorDF; // Ganhador p/ Deputado Federal
+string GanhadorDF = "BRANCO"; // Ganhador p/ Deputado Federal
 
 	for(i=0;i<=1237;i++){
 
@@ -662,13 +654,127 @@ string GanhadorDF; // Ganhador p/ Deputado Federal
 
 						maior = cand_DF[i].num_votos;
 						GanhadorDF = cand_DF[i].NM_CANDIDATO;
+                        
 					}
 			}
-	}
+    }        
 
 cout << "---------------CANDIDATOS VENCEDORES---------------" << endl << endl;
 cout << "DEPUTADO FEDERAL: " << GanhadorDF << endl;
+}
 
+void Urna::GanhadorDepDistrital(){
+
+int i;
+int maior = 0;
+string GanhadorDD = "BRANCO";
+
+	for(i=0;i<=1237;i++){
+
+			if(cand_DF[i].DS_CARGO == "DEPUTADO DISTRITAL" ){
+
+					if(cand_DF[i].num_votos > maior ){
+
+						maior = cand_DF[i].num_votos;
+						GanhadorDD = cand_DF[i].NM_CANDIDATO;
+                        
+					}
+			}
+    }        
+
+cout << "DEPUTADO DISTRITAL: " << GanhadorDD << endl;
+}
+
+void Urna::GanhadorSenador1(){
+
+int i;
+int maior = 0;
+string GanhadorSen = "BRANCO"; 
+
+	for(i=0;i<=1237;i++){
+
+			if(cand_DF[i].DS_CARGO == "SENADOR" ){
+
+					if(cand_DF[i].num_votos > maior ){
+
+						maior = cand_DF[i].num_votos;
+						GanhadorSen = cand_DF[i].NM_CANDIDATO;
+                        
+					}
+			}
+    }        
+
+cout << "SENADOR - 1ª VAGA: " << GanhadorSen << endl;
+
+}
+
+void Urna::GanhadorSenador2(){
+
+int i;
+int maior = 0;
+string GanhadorSen2 = "BRANCO"; 
+ 
+	for(i=0;i<=1237;i++){
+
+			if(cand_DF[i].DS_CARGO == "SENADOR" ){
+
+					if(cand_DF[i].num_votos > maior ){
+
+						maior = cand_DF[i].num_votos;
+						GanhadorSen2 = cand_DF[i].NM_CANDIDATO;
+                        
+					}
+			}
+    }        
+
+cout << "SENADOR - 2ª VAGA: " << GanhadorSen2 << endl;
+
+}
+
+void Urna::GanhadorGovernador(){
+
+int i;
+int maior = 0;
+string GanhadorGov = "BRANCO"; 
+
+	for(i=0;i<=1237;i++){
+
+			if(cand_DF[i].DS_CARGO == "GOVERNADOR" ){
+
+					if(cand_DF[i].num_votos > maior ){
+
+						maior = cand_DF[i].num_votos;
+						GanhadorGov = cand_DF[i].NM_CANDIDATO;
+                        
+					}
+			}
+    }        
+
+cout << "GOVERNADOR: " << GanhadorGov << endl;
+
+}
+
+void Urna::GanhadorPresidente(){
+
+int i;
+int maior = 0;
+string GanhadorPres = "BRANCO";
+
+	for(i=1238; i<= 1265; i++){
+
+			if(cand_DF[i].DS_CARGO == "PRESIDENTE" ){
+
+					if(cand_DF[i].num_votos > maior ){
+
+						maior = cand_DF[i].num_votos;
+						GanhadorPres = cand_DF[i].NM_CANDIDATO;
+                        
+					}
+			}
+    }        
+
+cout << "PRESIDENTE: " << GanhadorPres << endl;
+cout << "----------------------------------------------------" << endl;
 
 }
 

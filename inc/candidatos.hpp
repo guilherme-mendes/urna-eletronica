@@ -21,9 +21,8 @@ class Candidatos {
 		string NM_PARTIDO;
         string DS_PARTIDO;
 
-		int max_eleitores;
-		int num_votos;
-		int cand_analise;
+		int num_votos = 0;
+		int cand_analise = 0;
 
 		string get_NM_UE();
 		void set_NM_UE(string NM_UE);
@@ -41,7 +40,6 @@ class Candidatos {
 		void set_NM_PARTIDO(string NM_PARTIDO);
         string get_DS_PARTIDO();
 		void set_DS_PARTIDO(string DS_PARTIDO);
-		void set_max_eleitores(int max_eleitores);
 };
 
 #endif
