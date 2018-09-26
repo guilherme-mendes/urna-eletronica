@@ -21,13 +21,14 @@ class Urna {
        
         void lerArquivo();
         void lerArquivo2();
-        int ReturnEleitores();
+        void clearBuff();
+		int ReturnEleitores();
         void mesario();
         void cadastroEleitor();
         void confirmarVoto();
         void relatorio();
         void relatorio2();
-        void clearBuff();
+        
         void GanhadorDepFederal();
         void GanhadorDepDistrital();
         void GanhadorSenador1();

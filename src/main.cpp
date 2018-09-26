@@ -9,13 +9,12 @@ int main(){
 
 	Urna urna;
 	
-	int i;
-	
 	urna.lerArquivo();
 	urna.lerArquivo2();
 	urna.mesario();
 	
-
+	int i;
+	
 	while(i < urna.ReturnEleitores()){
 		
 		urna.cadastroEleitor();
@@ -36,7 +35,6 @@ int main(){
 	urna.GanhadorSenador2();
 	urna.GanhadorGovernador();
 	urna.GanhadorPresidente();
-
 
 	return 0;
 }

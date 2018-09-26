@@ -1,12 +1,11 @@
 #include "../inc/candidatos.hpp"
 #include "../inc/eleitor.hpp"
+#include "../inc/urna.hpp"
 #include <iostream>
 #include <string>
 
 Candidatos::Candidatos(){
     
-    cand_analise = 0;
-    num_votos = 0;
     NM_UE = "";
     DS_CARGO = "VAZIO";
     NM_CANDIDATO = "";
@@ -14,8 +13,11 @@ Candidatos::Candidatos(){
     NM_URNA_CANDIDATO = "";
     NR_PARTIDO = "";
     DS_PARTIDO = "";
-
+    posicao = 0;
+    num_votos = 0;
+    
 }
+
 Candidatos::~Candidatos(){}
 
 string Candidatos::get_NM_UE(){
@@ -66,4 +68,5 @@ string Candidatos::get_DS_PARTIDO(){
 void Candidatos::set_DS_PARTIDO(string DS_PARTIDO){
     this->DS_PARTIDO = DS_PARTIDO;
 }
+
 

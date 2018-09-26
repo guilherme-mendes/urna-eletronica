@@ -7,7 +7,6 @@ using namespace std;
 class Candidatos {
 	private:	
 		
-		
 	public:
 		Candidatos();
 		~Candidatos();
@@ -20,9 +19,8 @@ class Candidatos {
 		string NR_PARTIDO;        
 		string NM_PARTIDO;
         string DS_PARTIDO;
-
 		int num_votos = 0;
-		int cand_analise = 0;
+		int posicao = 0;
 
 		string get_NM_UE();
 		void set_NM_UE(string NM_UE);
@@ -40,6 +38,7 @@ class Candidatos {
 		void set_NM_PARTIDO(string NM_PARTIDO);
         string get_DS_PARTIDO();
 		void set_DS_PARTIDO(string DS_PARTIDO);
+		
 };
 
 #endif

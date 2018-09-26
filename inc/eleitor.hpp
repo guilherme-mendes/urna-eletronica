@@ -5,8 +5,7 @@
 using namespace std;
 
 class Eleitor {
-    private:
-        
+    private:     
         
     public:
         Eleitor();
@@ -19,7 +18,7 @@ class Eleitor {
         string VotoSup1, VotoSup2, VotoSup3, VotoSup4; // Suplentes dos Senadores 
         string VotoGov, VotoGovVice, VotoPres, VotoPresVice;
         int num_eleitores = 0;
-        int counter_eleitor = 0;
+        int contador = 0; //  Contador de eleitores 
 
         string get_nome();
 	    void set_nome(string nome); 
@@ -27,7 +26,7 @@ class Eleitor {
         void set_cpf(string cpf);
         long int get_titulo_eleitor();
         void set_titulo_eleitor(long int titulo_eleitor);
-    
+        
 };
 
 #endif

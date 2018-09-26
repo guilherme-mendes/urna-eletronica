@@ -4,9 +4,8 @@
 using namespace std;
 
 Eleitor::Eleitor() {
+    
     nome = "VAZIO";
-    cpf = "VAZIO";
-    titulo_eleitor = 0;
     VotoDD = "BRANCO";
     VotoDF = "BRANCO";
     VotoGov = "BRANCO";
@@ -42,4 +41,3 @@ long int Eleitor::get_titulo_eleitor(){
 void Eleitor::set_titulo_eleitor(long int titulo_eleitor){
     this->titulo_eleitor = titulo_eleitor;
 }
-
