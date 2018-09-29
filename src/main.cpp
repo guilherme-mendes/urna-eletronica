@@ -1,41 +1,41 @@
 #include <iostream>
 #include "../inc/candidatos.hpp"
 #include "../inc/eleitor.hpp"
-#include "../inc/urna.hpp"
+#include "../inc/info_cand.hpp"
 
 using namespace std;
 
 int main(){
 
-	Urna urna;
+	Candidatos candidatos;
 	
-	urna.lerArquivo();
-	urna.lerArquivo2();
-	urna.mesario();
+	candidatos.lerArquivo();
+	candidatos.lerArquivo2();
+	candidatos.mesario();
 	
 	int i;
 	
-	while(i < urna.ReturnEleitores()){
+	while(i < candidatos.ReturnEleitores()){
 		
-		urna.cadastroEleitor();
-		urna.VotoDeputadoFederal();
-		urna.VotoDeputadoDistrital();
-		urna.VotoSenador();
-		urna.VotoSenador2();
-		urna.VotoGovernador();
-		urna.VotoPresidente();
+		candidatos.cadastroEleitor();
+		candidatos.VotoDeputadoFederal();
+		candidatos.VotoDeputadoDistrital();
+		candidatos.VotoSenador();
+		candidatos.VotoSenador2();
+		candidatos.VotoGovernador();
+		candidatos.VotoPresidente();
 
 		i++;
 	}
 		
-	urna.relatorio();
-	urna.GanhadorDepFederal();
-	urna.GanhadorDepDistrital();
-	urna.GanhadorSenador1();
-	urna.GanhadorSenador2();
-	urna.GanhadorGovernador();
-	urna.GanhadorPresidente();
-
+	candidatos.relatorio();
+	candidatos.GanhadorPresidente();
+	candidatos.GanhadorGovernador();
+	candidatos.GanhadorSenador1();
+	candidatos.GanhadorSenador2();
+	candidatos.GanhadorDepFederal();
+	candidatos.GanhadorDepDistrital();
+	
 	return 0;
 }
 

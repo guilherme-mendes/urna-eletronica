@@ -18,6 +18,8 @@ make run
 
 ## Funcionalidades do projeto
 
+* Urna eletrônica da região do Distrito Federal. 
+
 ## Bugs e problemas
 
 ## Referências

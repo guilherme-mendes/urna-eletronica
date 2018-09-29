@@ -2,43 +2,39 @@
 #define CANDIDATOS_HPP
 #include <string>
 
-using namespace std; 
+
+using namespace std;
 
 class Candidatos {
-	private:	
-		
-	public:
-		Candidatos();
-		~Candidatos();
-		
-		string NM_UE;
-		string DS_CARGO;
-		string NR_CANDIDATO;
-		string NM_CANDIDATO;
-        string NM_URNA_CANDIDATO;
-		string NR_PARTIDO;        
-		string NM_PARTIDO;
-        string DS_PARTIDO;
-		int num_votos = 0;
-		int posicao = 0;
+    private:
+        
+    public:
+        Candidatos();
+        ~Candidatos();
 
-		string get_NM_UE();
-		void set_NM_UE(string NM_UE);
-        string get_DS_CARGO();
-		void set_DS_CARGO(string DS_CARGO);
-        string get_NR_CANDIDATO();
-		void set_NR_CANDIDATO(string NR_CANDIDATO);
-		string get_NM_CANDIDATO();
-		void set_NM_CANDIDATO(string NM_CANDIDATO);
-        string get_NM_URNA_CANDIDATO();
-		void set_NM_URNA_CANDIDATO(string NM_URNA_CANDIDATO);
-		string get_NR_PARTIDO();
-		void set_NR_PARTIDO(string NR_PARTIDO);
-        string get_NM_PARTIDO();
-		void set_NM_PARTIDO(string NM_PARTIDO);
-        string get_DS_PARTIDO();
-		void set_DS_PARTIDO(string DS_PARTIDO);
-		
+        void VotoDeputadoFederal();
+        void VotoDeputadoDistrital();
+        void VotoSenador();
+        void VotoSenador2();
+        void VotoGovernador();
+        void VotoPresidente();
+       
+        void lerArquivo();
+        void lerArquivo2();
+		int ReturnEleitores();
+        void mesario();
+        void cadastroEleitor();
+        void confirmarVoto();
+        void relatorio();
+        void relatorio2();
+        
+        void GanhadorDepFederal();
+        void GanhadorDepDistrital();
+        void GanhadorSenador1();
+        void GanhadorSenador2();
+        void GanhadorGovernador();
+        void GanhadorPresidente();
+        
 };
 
 #endif

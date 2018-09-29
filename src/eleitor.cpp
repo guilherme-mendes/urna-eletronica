@@ -6,18 +6,20 @@ using namespace std;
 Eleitor::Eleitor() {
     
     nome = "VAZIO";
-    VotoDD = "BRANCO";
-    VotoDF = "BRANCO";
-    VotoGov = "BRANCO";
-    VotoGovVice = "BRANCO";
-    VotoSen = "BRANCO";
-    VotoSup1 = "BRANCO";
-    VotoSup2 = "BRANCO";
-    VotoSen2 = "BRANCO";
-    VotoSup3 = "BRANCO";
-    VotoSup4 = "BRANCO";
-    VotoPres = "BRANCO";
-    VotoPresVice = "BRANCO";
+    titulo_eleitor = 0;
+    cpf = 0;
+    DepDis = "BRANCO";
+    DepFed = "BRANCO";
+    Govern = "BRANCO";
+    GovernVice = "BRANCO";
+    Senad = "BRANCO";
+    Senad2 = "BRANCO";
+    Suple1 = "BRANCO";
+    Suple2 = "BRANCO";
+    Suple3 = "BRANCO";
+    Suple4 = "BRANCO";
+    Presid = "BRANCO";
+    PresidVice = "BRANCO";
 
 }
 
@@ -29,10 +31,10 @@ string Eleitor::get_nome(){
 void Eleitor::set_nome(string nome){
     this->nome = nome;
 }
-string Eleitor::get_cpf(){
+long int Eleitor::get_cpf(){
     return cpf;
 }
-void Eleitor::set_cpf(string cpf){
+void Eleitor::set_cpf(long int cpf){
     this->cpf = cpf;
 }
 long int Eleitor::get_titulo_eleitor(){
