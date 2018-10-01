@@ -8,6 +8,7 @@ Eleitor::Eleitor() {
     nome = "VAZIO";
     titulo_eleitor = 0;
     cpf = 0;
+    
     DepDis = "BRANCO";
     DepFed = "BRANCO";
     Govern = "BRANCO";

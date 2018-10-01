@@ -1,6 +1,7 @@
 #ifndef CANDIDATOS_HPP
 #define CANDIDATOS_HPP
 #include <string>
+#define MAX 1365
 
 
 using namespace std;

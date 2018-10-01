@@ -10,8 +10,8 @@ using namespace std;
 Candidatos::Candidatos(){}
 Candidatos::~Candidatos(){}
 
-Eleitor eleitor[1265];
-Info_cand cand_BR[1265];
+Eleitor eleitor[MAX];
+Info_cand cand_BR[MAX];
 
 // FUNCIONALIDADES DA URNA ELETRONICA
 
@@ -87,7 +87,7 @@ void Candidatos::lerArquivo2(){
             cout << "Não foi possível abrir o arquivo!" << endl;
 		}
 	
-	for (i=1238; i<= 1265; i++){
+	for (i=1238; i<= MAX; i++){
 		
 		getline(arquivo, cand_BR[i].NM_UE, ',');
 		getline(arquivo, cand_BR[i].DS_CARGO, ',');
@@ -232,6 +232,7 @@ void Candidatos::VotoSenador(){
             if(cand_BR[i].NR_CANDIDATO == num_senador && cand_BR[i].DS_CARGO == "SENADOR"){
                 assist = 1;
                 
+                cand_BR[i].sen = 1;
                 cand_BR[0].posicao = i;
                 cand_BR[3].posicao = 1;
 
@@ -327,6 +328,7 @@ void Candidatos::VotoSenador2(){
 
                 cand_BR[0].posicao = i;
                 cand_BR[3].posicao = 2;
+                cand_BR[i].sen = 2;
 
                 cout << "--------------INFORMAÇÕES DO CANDIDATO--------------" << endl << endl;
                 cout << "Nome Completo: " << cand_BR[i].NM_CANDIDATO << endl;
@@ -484,7 +486,7 @@ void Candidatos::VotoPresidente(){
             }
         }while(num_presidente.size()!=2);
         
-        for(i=1238; i<= 1265; i++){
+        for(i=1238; i<= MAX; i++){
             
             if(cand_BR[i].NR_CANDIDATO == num_presidente && cand_BR[i].DS_CARGO == "PRESIDENTE"){
                 assist = 1;
@@ -505,7 +507,7 @@ void Candidatos::VotoPresidente(){
 
         }
 
-        for(i=1238; i<= 1265; i++){
+        for(i=1238; i<= MAX; i++){
             
             if(cand_BR[i].NR_CANDIDATO == num_presidente && cand_BR[i].DS_CARGO == "VICE-PRESIDENTE"){
                 assist = 1;
@@ -662,7 +664,7 @@ int i;
 int vencedor = 0;
 string GanhadorPres = "BRANCO";
 
-	for(i=1238; i<= 1265; i++){
+	for(i=1238; i<= MAX; i++){
 
 			if(cand_BR[i].DS_CARGO == "PRESIDENTE"){
 
@@ -709,7 +711,7 @@ string GanhadorSen = "BRANCO";
 
 	for(i=0;i<=1237;i++){
 
-			if(cand_BR[i].DS_CARGO == "SENADOR"){
+			if(cand_BR[i].DS_CARGO == "SENADOR" && cand_BR[i].sen == 1){
 
 					if(cand_BR[i].num_votos > vencedor ){
 
@@ -720,7 +722,7 @@ string GanhadorSen = "BRANCO";
 			}
     }        
 
-cout << "SENADOR: " << GanhadorSen << endl;
+cout << "SENADOR - 1ª VAGA: " << GanhadorSen << endl;
 }
 
 void Candidatos::GanhadorSenador2(){
@@ -731,7 +733,7 @@ string GanhadorSen2 = "BRANCO";
  
 	for(i=0;i<=1237;i++){
 
-			if(cand_BR[i].DS_CARGO == "SENADOR"){
+			if(cand_BR[i].DS_CARGO == "SENADOR" && cand_BR[i].sen == 2){
 
 					if(cand_BR[i].num_votos > vencedor ){
                         
@@ -742,7 +744,7 @@ string GanhadorSen2 = "BRANCO";
 			}
     }        
 
-// cout << "SENADOR - 2ª VAGA: " << GanhadorSen2 << endl;
+cout << "SENADOR - 2ª VAGA: " << GanhadorSen2 << endl;
 }
 
 void Candidatos::GanhadorDepFederal(){
@@ -791,7 +793,6 @@ cout << "----------------------------------------------------" << endl;
 }
 
 int Candidatos::ReturnEleitores(){
-
     return eleitor[0].num_eleitores;
 }
 

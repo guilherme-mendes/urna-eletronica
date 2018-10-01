@@ -21,6 +21,7 @@ class Info_cand {
         string DS_PARTIDO;
 		int num_votos = 0;
 		int posicao = 0;
+		int sen;
 
 		string get_NM_UE();
 		void set_NM_UE(string NM_UE);
