@@ -720,7 +720,7 @@ string GanhadorSen = "BRANCO";
 			}
     }        
 
-cout << "SENADOR - 1ª VAGA: " << GanhadorSen << endl;
+cout << "SENADOR: " << GanhadorSen << endl;
 }
 
 void Candidatos::GanhadorSenador2(){
@@ -742,7 +742,7 @@ string GanhadorSen2 = "BRANCO";
 			}
     }        
 
-cout << "SENADOR - 2ª VAGA: " << GanhadorSen2 << endl;
+// cout << "SENADOR - 2ª VAGA: " << GanhadorSen2 << endl;
 }
 
 void Candidatos::GanhadorDepFederal(){

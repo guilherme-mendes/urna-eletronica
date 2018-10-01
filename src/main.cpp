@@ -32,7 +32,7 @@ int main(){
 	candidatos.GanhadorPresidente();
 	candidatos.GanhadorGovernador();
 	candidatos.GanhadorSenador1();
-	candidatos.GanhadorSenador2();
+	//candidatos.GanhadorSenador2();
 	candidatos.GanhadorDepFederal();
 	candidatos.GanhadorDepDistrital();
 	
