@@ -29,7 +29,10 @@ make run
 
 ## Bugs e problemas
 
+* Se houver um empate, não será especificado, apresentando o último candidato que foi votado como ganhador.
+
 ## Referências
 
 * http://www.cplusplus.com/
 * https://www.tutorialspoint.com/cplusplus/ 
+* http://www.tse.jus.br/eleicoes/estatisticas/repositorio-de-dados-eleitorais-1/

@@ -31,11 +31,11 @@ void Candidatos::cadastroEleitor(){
     getline(cin, eleitor[eleitor[0].contador].nome);
     cout << endl;
 
-    cout << "DIGITE O Nº DO SEU TITULO DE ELEITOR: " << endl;
+    cout << "DIGITE O Nº DO SEU TITULO DE ELEITOR: (EX: 025371162097)" << endl;
     cin >> eleitor[eleitor[0].contador].titulo_eleitor;
     cout << endl;
     
-    cout << "DIGITE SEU CPF: " << endl;
+    cout << "DIGITE SEU CPF: (EX: 34789020192)" << endl;
     cin.ignore();
     cin >> eleitor[eleitor[0].contador].cpf;
     cout << endl;
@@ -110,7 +110,7 @@ void Candidatos::VotoDeputadoFederal(){
     string num_federal;
 
     do{
-        cout << "DIGITE O Nº DO SEU DEPUTADO FEDERAL: " << endl;
+        cout << "DIGITE O Nº DO SEU DEPUTADO FEDERAL: (EX: 9873)" << endl;
 
         do{
             fflush(stdin);
@@ -150,7 +150,19 @@ void Candidatos::VotoDeputadoFederal(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     }
         while(assist == 0);
@@ -161,7 +173,7 @@ void Candidatos::VotoDeputadoDistrital(){
     string num_distrital;
 
     do{
-        cout << "DIGITE O Nº DO SEU DEPUTADO DISTRITAL: " << endl;
+        cout << "DIGITE O Nº DO SEU DEPUTADO DISTRITAL: (EX: 76983)" << endl;
         
         do{
             fflush(stdin);
@@ -201,7 +213,19 @@ void Candidatos::VotoDeputadoDistrital(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     }    
         while(assist == 0);
@@ -213,7 +237,7 @@ void Candidatos::VotoSenador(){
     int i;
 
     do{
-        cout << "DIGITE O Nº DO SEU SENADOR - 1ª VAGA: " << endl;
+        cout << "DIGITE O Nº DO SEU SENADOR - 1ª VAGA: (EX: 900)" << endl;
         
         do{
             fflush(stdin);
@@ -295,7 +319,19 @@ void Candidatos::VotoSenador(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     }  
         while(assist == 0);
@@ -307,7 +343,7 @@ void Candidatos::VotoSenador2(){
     int i;
 
     do{
-        cout << "DIGITE O Nº DO SEU SENADOR - 2ª VAGA: " << endl;
+        cout << "DIGITE O Nº DO SEU SENADOR - 2ª VAGA: (EX: 800)" << endl;
         
         do{
             fflush(stdin);
@@ -389,7 +425,19 @@ void Candidatos::VotoSenador2(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     } 
         while(assist == 0);
@@ -401,7 +449,7 @@ void Candidatos::VotoGovernador(){
     int i;
 
     do{
-        cout << "DIGITE O Nº DO SEU GOVERNADOR: " << endl;
+        cout << "DIGITE O Nº DO SEU GOVERNADOR: (EX: 87)" << endl;
         
         do{
             fflush(stdin);
@@ -460,7 +508,19 @@ void Candidatos::VotoGovernador(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     } 
         while(assist == 0);
@@ -472,7 +532,7 @@ void Candidatos::VotoPresidente(){
     int i;
 
     do{
-        cout << "DIGITE O Nº DO SEU PRESIDENTE: " << endl;
+        cout << "DIGITE O Nº DO SEU PRESIDENTE: (EX: 67)" << endl;
         
         do{
             fflush(stdin);
@@ -531,7 +591,19 @@ void Candidatos::VotoPresidente(){
         }
 
         else if(assist == 0){
-            cout << "CANDIDATO INVÁLIDO. DIGITE NOVAMENTE! " << endl;
+            char e;
+            cout << "CANDIDATO INVÁLIDO ! DIGITE NOVAMENTE, OU DIGITE [3] PARA VOTAR BRANCO !" << endl;
+            cin.ignore();
+            e = getchar();
+            system("clear");
+            
+            if(e == '3'){
+                cout << "----------------------------------------------------" << endl;
+                cout << "VOTO BRANCO !" << endl;
+                cout << "----------------------------------------------------" << endl;
+                assist = 1;
+            }
+         
         }
     }    
         while(assist == 0);
@@ -624,7 +696,18 @@ void Candidatos::confirmarVoto(){
 
                     VotoPresidente();
                 }
+        }
 
+        else if (opcao == '3'){
+            cout << "----------------------------------------------------" << endl;
+            cout << "VOTO BRANCO !" << endl;
+            cout << "----------------------------------------------------" << endl;
+        }
+        else {
+            cout << "----------------------------------------------------" << endl;
+            cout << "OPÇÃO INVÁLIDA, DIGITE AS SEGUINTES OPÇÕES !" << endl;
+            cout << "----------------------------------------------------" << endl;
+            confirmarVoto();
         }
         
 } 
@@ -795,6 +878,3 @@ cout << "----------------------------------------------------" << endl;
 int Candidatos::ReturnEleitores(){
     return eleitor[0].num_eleitores;
 }
-
-
-
