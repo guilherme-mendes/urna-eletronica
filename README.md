@@ -18,8 +18,18 @@ make run
 
 ## Funcionalidades do projeto
 
-* Esse programa simula o funcionamento de uma urna eleitoral com suas devidas aplicações, juntamente aos dados dos candidatos do Distrito Federal adquiridos do repositório oficial do TSE.
+* Esse programa desenvolvido em c++ simula o funcionamento de uma urna eleitoral no Distrito Federal com suas devidas funcionalidades:
+
+* Inserção do número de eleitores que votarão na urna.
+* Cadastro do Eleitor (NOME, CPF, TÍTULO DE ELEITOR).
+* Adição do voto por eleitor, apresentando todas as informações dos candidatos que irá votar, através da leitura dos arquivos .CSV (Presidente, Governador, Senadores com seus suplentes, Deputado Federal e Distrital).
+* Menu de escolha do eleitor (confirmar, cancelar, voto em branco).
+* Relatório Final com os dados do eleitor e seus respectivos candidatos.
+* Resultado dos ganhadores das eleições.
 
 ## Bugs e problemas
 
 ## Referências
+
+* http://www.cplusplus.com/
+* https://www.tutorialspoint.com/cplusplus/ 
