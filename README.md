@@ -32,4 +32,4 @@ make run
 ## Referências
 
 * http://www.cplusplus.com/
-* https://wwgw.tutorialspoint.com/cplusplus/ 
+* https://www.tutorialspoint.com/cplusplus/ 
