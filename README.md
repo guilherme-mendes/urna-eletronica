@@ -27,10 +27,6 @@ make run
 * Relatório Final com os dados do eleitor e seus respectivos candidatos.
 * Resultado dos ganhadores das eleições.
 
-## Bugs e problemas
-
-* Se houver um empate, não será especificado, apresentando o último candidato que foi votado como ganhador.
-
 ## Referências
 
 * http://www.cplusplus.com/
